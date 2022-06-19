@@ -1,17 +1,17 @@
-import Button from '@mui/material/Button';
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "@mui/material";
 
-export default function Login() {
-    const { loginWithRedirect } = useAuth0();
+export default function Logout() {
+    const { logout } = useAuth0();
 
     return(
         <Button
-            onClick={() => loginWithRedirect()}
+            onClick={() => logout()}
             variant="text"
             size='large'
             color='info'
         >
-            Login
+            Logout
         </Button>
     )
 }
