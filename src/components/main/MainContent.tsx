@@ -1,4 +1,5 @@
 import { Container, createTheme, CssBaseline, ThemeProvider, Typography } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
 import Welcome from "../welcome/Welcome";
 
 const theme = createTheme({
@@ -10,7 +11,9 @@ export default function MainContent() {
         <ThemeProvider theme={theme}>
             <CssBaseline/>
             <Container maxWidth={false} style={{paddingTop: '16px'}}>
-                <Welcome/>
+                <Routes>
+                    <Route path='/' element={<Welcome/>}/>
+                </Routes>
             </Container>
         </ThemeProvider>
     )
