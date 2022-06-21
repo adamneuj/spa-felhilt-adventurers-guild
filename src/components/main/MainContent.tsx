@@ -1,6 +1,5 @@
 import { Container, createTheme, CssBaseline, ThemeProvider, Typography } from "@mui/material";
-import { Route, Routes } from "react-router-dom";
-import Welcome from "../welcome/Welcome";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const theme = createTheme({
     spacing: 16
@@ -11,9 +10,7 @@ export default function MainContent() {
         <ThemeProvider theme={theme}>
             <CssBaseline/>
             <Container maxWidth={false} style={{paddingTop: '16px'}}>
-                <Routes>
-                    <Route path='/' element={<Welcome/>}/>
-                </Routes>
+                <ProtectedRoutes/>
             </Container>
         </ThemeProvider>
     )
