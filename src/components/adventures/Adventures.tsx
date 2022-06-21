@@ -1,5 +1,7 @@
 import { Button, Divider, Grid, Typography } from "@mui/material";
 import { MouseEvent } from "react";
+import AdventureCard from "./AdventureCard";
+import { adventureCards } from "./AdventureCardData";
 
 export default function Adventures() {
     const startNewAdventure = () => {
@@ -14,7 +16,7 @@ export default function Adventures() {
                     </Typography>
                 </Divider>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} pb='10px'>
             <Button
                 onClick={() => startNewAdventure()}
                 variant="outlined"
@@ -23,7 +25,20 @@ export default function Adventures() {
             >
                 Start New Adventure
             </Button>
-            </Grid> 
+            </Grid>
+            <Grid item xs={12} pb='10px'>
+                {adventureCards.map(card => {
+                    return <AdventureCard 
+                            adventureName={card.adventureName} 
+                            date={card.date} 
+                            maxPlayers={card.maxPlayers} 
+                            playerCount={card.playerCount} 
+                            gameMaster={card.gameMaster} 
+                            length={card.length}
+                            balance={card.balance} 
+                            synopsis={card.synopsis}
+                            />})}
+            </Grid>
         </Grid>
     )
 }
